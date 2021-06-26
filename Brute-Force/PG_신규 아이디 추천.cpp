@@ -36,3 +36,11 @@ string solution(string new_id) {
     answer = id;
     return answer;
 }
+
+// 다른 사람의 코드
+// subchr("문자열", 찾을 문자) --> 찾는 문자가 문자열에 없으면 NULL 반환, 있으면 찾는 문자의 주소 반환
+for (char& ch: new_id){ 
+        if ('a' <= ch && ch <= 'z' ||
+            '0' <= ch && ch <= '9' ||
+            strchr("-_.", ch)) ret += ch;
+}
