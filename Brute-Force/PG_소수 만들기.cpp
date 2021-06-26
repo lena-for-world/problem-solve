@@ -25,3 +25,12 @@ int solution(vector<int> nums) {
     }
     return answer;
 }
+
+
+// 소수를 미리 만들어 둘 필요 없이, 그 때 그 때 만든 합을 소수 판별 할 수도 있음
+bool check(int n){
+    for(int i=2;i<n/2;i++)
+        if(n%i==0)
+            return false;
+    return true;
+}
