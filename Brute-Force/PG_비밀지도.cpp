@@ -1,8 +1,4 @@
-#include <string>
-#include <iostream>
-#include <vector>
-
-using namespace std;
+// 내 코드
 
 string st;
 
@@ -48,7 +44,6 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
     }
     return answer;
 }
-
 
 
 // 이건 엄청 간단한 비트 연산 코드
