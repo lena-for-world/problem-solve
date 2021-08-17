@@ -1,3 +1,5 @@
+// 가중치가 음인 경우 벨만-포드 알고리즘을 사용할 수 있다.
+
 #include <iostream>
 #include <vector>
 #define MAX 500
