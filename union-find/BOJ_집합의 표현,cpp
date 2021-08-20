@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+#define MAX 1000001
+using namespace std;
+
+int p[MAX];
+
+int find(int n) {
+	if(p[n] < 0) return n;
+	return find(p[n]);
+}
+
+void merge(int a, int b) {
+	a = find(a);
+	b = find(b);
+	if(a == b) return;
+  // 집합의 크기가 더 큰 쪽으로 노드를 붙여서 연산 시간을 감소시킨다
+	if(p[a] < p[b]) {
+		p[a] += p[b];
+		p[b] = a; // b의 부모 노드로 a 지정
+	} else {
+		p[b] += p[a];
+		p[a] = b;
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n, m, a, b, command;
+	cin >> n >> m;
+	for(int i = 0; i < n+1; i++) p[i] = -1;
+	for(int i = 0; i < m; i++) {
+		cin >> command >> a >> b;
+		if(command == 0) {
+			merge(a, b);
+		} else {
+			if(find(a) == find(b)) {
+				cout << "YES" << '\n';
+			} else {
+				cout << "NO" << '\n';
+			}
+		}
+	}
+	return 0;
+}
