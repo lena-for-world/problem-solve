@@ -84,9 +84,9 @@ int main() {
 		priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, compare> pq;
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
-        // 상어가 있는 좌표는 빼고 
+        			// 상어가 있는 좌표는 빼고 
 				if(map[i][j] > 0 && map[i][j] < ssize && (map[i][j] != 9)) {
-          // 먹을 수 있는 물고기에게 이동할 수 있는지 판단
+          				// 먹을 수 있는 물고기에게 이동할 수 있는지 판단
 					int res = calc({i,j}, shark);
 					if(res == -1) continue;
 					else pq.push({-res, {i,j}}); // 물고기 좌표와 이동거리 저장
@@ -98,7 +98,6 @@ int main() {
 		int newx = pq.top().second.second;
 		totalTime -= pq.top().first;
 		fishCount++;
-	//	cout << newy << " " << newx << " " << ssize << " " << totalTime <<endl;
 		// 상어 크기만큼 물고기를 먹었다면 상어 크기 +1
 		if(fishCount == ssize) {
 			ssize++;
