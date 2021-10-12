@@ -1,9 +1,9 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
-map<string, string> p;
-map<string, int> cnt;
+unordered_map<string, string> p; // unordered_map은 O(1), map은 O(logN)
+unordered_map<string, int> cnt;
 
 string find(string n) {
 	if(p[n] == "-1") return n;
