@@ -3,6 +3,10 @@
 
 using namespace std;
 
+// ※※ 그리디가 아닌 것 같음! 그리디로 풀어서 테스트 케이스는 모두 통과했는데, 테케에 없는 예외는 통과못함
+// 예를 들면 "CANAAAAANAN"이라는 이름에 대해서 그리디로 이동하면 49지만, 완탐으로 이동하면 48이 나옴
+// 아래의 코드는 그리디기 때문에 완탐으로 짜봐야할듯
+
 int solution(string name) {
     int answer = 0;
     string st = "";
