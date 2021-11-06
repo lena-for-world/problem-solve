@@ -22,3 +22,25 @@ int main() {
 
 
 
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int check[10001];
+
+int main() {
+	memset(check,0,sizeof(check));
+	for(int i = 1; i <= 10000; i++) {
+		int temp = i;
+		int sum = i;
+		while(temp > 0) {
+			sum += (temp % 10);
+			temp /= 10;
+		}
+		check[sum] = 1;
+	}
+	for(int i = 1; i <= 10000; i++) {
+		if(check[i] == 0) cout << i << '\n';
+	}
+	return 0;
+}
