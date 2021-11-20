@@ -1,0 +1,16 @@
+select t2.m month, t2.n name, t2.c count
+from (
+    select t.m, t.n, t.c
+    , dense_rank() over (partition by t.m order by t.c desc) as rn
+    from(
+        SELECT to_char(created_at, 'mm') m, p.name n, count(*) c
+            from place_reviews pr
+            inner join
+            places p
+            on p.id = pr.place_id
+            where pr.created_at between to_date('2018-01-01', 'yyyy-mm-dd') and to_date('2018-12-31', 'yyyy-mm-dd')
+           group by to_char(created_at, 'mm'), p.name
+        ) t
+    ) t2
+where rn = 1
+order by month, name;
