@@ -15,7 +15,7 @@ public class Main {
         }
 
         Set<String> set = new HashSet<String>(Arrays.asList(sts));
-        // 또는 ArrayList->List로 변환 후 Stream 사용하여 중복  : newList.stream().distinct().collect(Collectors.toList());
+        // 또는 Array->List로 변환 후 Stream 사용하여 중복  : newList.stream().distinct().collect(Collectors.toList());
 
         List<String> newList = new ArrayList<String>(set);
 
