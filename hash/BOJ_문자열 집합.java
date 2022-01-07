@@ -11,6 +11,12 @@ public class Main {
         String [] arr = sts.split(" ");
         int N = Integer.parseInt(arr[0]);
         int M = Integer.parseInt(arr[1]);
+        /*
+            이런 게 있었네..
+            StringTokenizer stk = new StringTokenizer(br.readLine());
+            int N = Integer.parseInt(stk.nextToken());
+            int M = Integer.parseInt(stk.nextToken());
+        */
 
         int count = 0;
 
